@@ -4,7 +4,7 @@ train:
     batch_type: Shell
     context_type: local
     local_root: ./
-    remote_root: /home/sekinelabo/Documents/DeepMD-Sodium/dpgen/
+    remote_root: /home/sekinelabo/Documents/DP-GEN_Sodium/dpgen/
   resources:
     gpu_per_node: 1
     group_size: 14
@@ -14,7 +14,7 @@ model_devi:
   machine:
     batch_type: Shell
     local_root: ./
-    remote_root: /home/sekinelabo/Documents/DeepMD-Sodium/dpgen/
+    remote_root: /home/sekinelabo/Documents/DP-GEN_Sodium/dpgen/
     context_type: local
   resources:
     gpu_per_node: 1
@@ -25,9 +25,10 @@ fp:
   machine:
     batch_type: Shell
     local_root: ./
-    remote_root: /home/sekinelabo/Documents/DeepMD-Sodium/dpgen/
+    remote_root: /home/sekinelabo/Documents/DP-GEN_Sodium/dpgen/
     context_type: local
   resources:
+    number_node: 1
     gpu_per_node: 1
     cpu_per_node: 14
     group_size: 1
