@@ -1,30 +1,32 @@
 type_map:
   - Na
-pick_data: /home/sekinelabo/Documents/DP-GEN_Sodium/dpgen/simplify
-init_data_prefix: ''
+pick_data: /home/sekinelabo/Documents/DP-GEN_Sodium/simplify/
+init_data_prefix: ""
 init_data_sys:
-  - /home/sekinelabo/Documents/DP-GEN_Sodium/dpgen/data/Na7/
-sys_format: deepmd/npy
+  - /home/sekinelabo/Documents/DP-GEN_Sodium/data/Na7/
+sys_format: deepmd/raw
 sys_configs:
-  - - /home/sekinelabo/Documents/DP-GEN_Sodium/dpgen/data/Na7/
+  - - /home/sekinelabo/Documents/DP-GEN_Sodium/iter.00000*/02.fp/data.000/
+sys_batch_size:
+  - 1
 numb_models: 4
 default_training_param:
   model:
     type_map:
-    - Na
+      - Na
     data_stat_nbatch: 1
     type: standard
     descriptor:
       type: se_e2_a
       activation_function: relu
       sel:
-      - 60
+        - 60
       rcut: 6.0
       rcut_smth: 1.8
       neuron:
-      - 25
-      - 50
-      - 100
+        - 25
+        - 50
+        - 100
       axis_neuron: 8
       resnet_dt: false
       precision: float64
@@ -32,9 +34,9 @@ default_training_param:
     fitting_net:
       type: ener
       neuron:
-      - 240
-      - 240
-      - 240
+        - 240
+        - 240
+        - 240
       precision: float64
       resnet_dt: true
       seed: 1
@@ -62,41 +64,15 @@ default_training_param:
     time_training: true
     profiling: false
     profiling_file: timeline.json
+fp_style: gaussian
 fp_task_max: 3000
 fp_task_min: 1
-model_devi_engine: lammps
-model_devi_jobs:
-  - sys_idx:
-      - 0
-    temps:
-      - 300
-    press:
-      - 1
-    nsteps: 10000
-    ensemble: nvt
-    trj_freq: 10
-    _idx: "00"
-  - sys_idx:
-      - 0
-    temps:
-      - 300
-    press:
-      - 1
-    nsteps: 30000
-    ensemble: nvt
-    trj_freq: 10
-    _idx: "01"
-model_devi_dt: 0.002
-model_devi_skip: 0
+fp_params:
+  keywords: "P B3LYP/6-311+g(d) force"
+  nproc: 15
+  charge: 0
+init_pick_number: 3000
+iter_pick_number: 3000
 model_devi_f_trust_lo: 0.05
 model_devi_f_trust_hi: 0.15
-model_devi_clean_traj: false
-model_devi_nopbc: true
-fp_style: gaussian
-use_clusters: false
-fp_params:
-  keywords: P B3LYP/6-311+g(d) force
-  nproc: 14
-  charge: 0
-init_pick_number: 100,
-iter_pick_number: 100,
+
