@@ -1,1 +1,0 @@
-/home/sekinelabo/Documents/DP-GEN_Sodium/iter.000004/00.train/graph.000.pb
