@@ -1,1 +1,0 @@
-002/frozen_model.pb
