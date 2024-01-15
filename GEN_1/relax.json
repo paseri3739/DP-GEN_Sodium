@@ -1,0 +1,15 @@
+{
+    "structures":         ["sys_configs/*.lmp"],
+    "interaction": {
+            "type":        "deepmd",
+            "model":       "iter.000005/00.train/000/frozen_model.pb",
+            "in_lammps":   "lammps_input/in.lammps",
+            "type_map":   {"Na": 0}
+	},
+    "relaxation": {
+            "cal_setting":{"etol": 0,
+                           "ftol": 1e-10,
+                           "maxiter": 5000,
+                           "maximal": 500000}
+	}
+}
